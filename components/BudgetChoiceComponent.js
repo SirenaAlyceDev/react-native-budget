@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { Text, Button } from "react-native-elements";
 
-const BudgetChoice = () => {
+const BudgetChoice = ({ navigation }) => {
   return (
     <>
       <View style={{ padding: 20 }}>
@@ -11,15 +11,15 @@ const BudgetChoice = () => {
       <View style={{ margin: 20 }}>
         <Button
           title="List Style Budget"
-          onPress={() => {console.log('list style button pressed')}}
           raised
           containerStyle={{
             margin: 10,
           }}
+          onPress={() => navigation.navigate('List Budget')}
         />
         <Button
           title="50-30-20 Style Budget"
-          onPress={() => {console.log('50-30-20 style button pressed')}}
+          onPress={() => navigation.navigate('50-30-20 Budget')}
           raised
           containerStyle={{
             margin: 10,
