@@ -2,22 +2,13 @@ import React, { useState } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { Text, Icon, Button } from "react-native-elements";
 
-const FTT = () => {
+const FTT = (props) => {
   const [income, setIncome] = useState("");
-  const [amount, setAmount] = useState("");
+  const [needs, setNeeds] = useState();
+  const [wants, setWants] = useState();
+  const [savings, setSavings] = useState();
+  const [amount, setAmount] = useState(0);
 
-  const calculateNeeds = () => {
-    needs = {income} * .50;
-    console.log(need);
-  }
-
-  const calculateWants = () => {
-    console.log('needs');
-  }
-
-  const calculateSavings = () => {
-    console.log('needs');
-  }
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text style={{ fontSize: 20 }}>Monthly Income</Text>
@@ -34,15 +25,53 @@ const FTT = () => {
         onChangeText={(amount) => setAmount(amount)}
         defaultValue={amount}
       />
+      <Button
+      raised
+      title="Calculate My Budget"
+      containerStyle={{ margin: 10}}
+      onPress={()=> {
+        setNeeds(Math.round(amount * .50));
+        setWants(Math.round(amount * .30));
+        setSavings(Math.round(amount * .20));
+      }}
+      />
       <Text>
-        Necessites - 50%
+        Needs
       </Text>
       <Text>
-        Wants - 30%
-      </Text>      
-      <Text>
-        Savings - 20%
+       {needs}
       </Text>
+      <Text>
+        Wants
+      </Text>
+      <Text>
+        {wants}
+        </Text>   
+      <Text>
+        Savings
+      </Text>
+      <Text>
+        {savings}
+      </Text>
+      <View style={{flexDirection: 'row'}}>
+      <Button
+      raised
+      title="Share"
+      containerStyle={{ margin: 10}}
+      />
+      <Button
+      raised
+      title="Clear"
+      containerStyle={{ margin: 10}}
+      onPress={() => {
+        setIncome();
+        setAmount();
+        setNeeds();
+        setWants();
+        setSavings();
+      } }
+      />
+      </View>
     </View>
   );
 };
