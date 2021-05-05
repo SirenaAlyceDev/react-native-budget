@@ -1,47 +1,48 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import { Text, Icon, Button } from "react-native-elements";
+import { View, StyleSheet, SafeAreaView } from "react-native";
+import { Text, Button, Image } from "react-native-elements";
+import blkwoman from '../assets/img/pexels-ketut-subiyanto-4353614-removebg-preview.png'
 
 const Home = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View>
-        <Icon name="comments-dollar" type="font-awesome-5" size={100} />
+        <Image source={blkwoman} style={{ width: 300, height: 400 }} />
       </View>
-      <View>
-        {/* <Text h1>The B-Word</Text> */}
-        <Text>Financial Peace We All Need</Text>
-      </View>
-      <View>
-        <Text style={styles.secondarydescription}>
+      <View style={styles.headline}>
+        <Text h1>Financial Peace We All Need</Text>
+        <Text>
           Let's control your spending, track your expenses, and save more money.
         </Text>
       </View>
-
-      <Button
-        title="Start Budgeting"
-        containerStyle={{ width: "50%" }}
-        onPress={() => navigation.navigate('Budget')}
-            // console.log("start budget button pressed")}
-        raised
-      />
-    </View>
+      <View style={styles.buttonContainer}>
+        <Button title="Sign Up" />
+        <Button title="Sign In" />
+      </View>
+      <View>
+        <Text style={styles.terms}>terms text</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 150
+    flex: 1,
+    margin: 20,
   },
-  mainheader: {
-    margin: 24,
-    alignItems: "center",
+  headline: {
+    flex: 5,
+    justifyContent: "flex-end",
   },
-  secondarydescription: {
-    margin: 24,
-    alignItems: "center",
+  buttonContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-end",
+    justifyContent: "space-evenly",
+    margin: 10,
+  },
+  terms: {
     textAlign: "center",
   },
 });
