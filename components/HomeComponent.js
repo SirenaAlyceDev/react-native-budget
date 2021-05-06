@@ -6,8 +6,8 @@ import blkwoman from '../assets/img/pexels-ketut-subiyanto-4353614-removebg-prev
 const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Image source={blkwoman} style={{ width: 300, height: 400 }} />
+      <View style={styles.imageContainer}>
+        <Image source={blkwoman} style={{ width: 200, height: 300 }} />
       </View>
       <View style={styles.headline}>
         <Text h1>Financial Peace We All Need</Text>
@@ -16,8 +16,8 @@ const Home = ({ navigation }) => {
         </Text>
       </View>
       <View style={styles.buttonContainer}>
-        <Button title="Sign Up" />
-        <Button title="Sign In" />
+        <Button title="Sign Up" onPress={() => navigation.navigate('Sign Up')} />
+        <Button title="Log In" onPress={() => navigation.navigate('Log In')} />
       </View>
       <View>
         <Text style={styles.terms}>terms text</Text>
@@ -31,16 +31,25 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 20,
   },
+  imageContainer: {
+    flex: 3,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    // backgroundColor: "green"
+  },
   headline: {
-    flex: 5,
+    flex: 1,
     justifyContent: "flex-end",
+    // backgroundColor: "orange",
+    padding: 20
   },
   buttonContainer: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "flex-end",
     justifyContent: "space-evenly",
-    margin: 10,
+    // backgroundColor: "pink",
+    paddingBottom: 10
   },
   terms: {
     textAlign: "center",

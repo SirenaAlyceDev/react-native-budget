@@ -1,9 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 import Home from "./HomeComponent";
-import BudgetChoice from "./BudgetChoiceComponent";
-import ListBudget from "./ListBudgetComponent";
-import FTT from "./FTTComponent";
+import SignUp from "./SignUpComponent";
+import Login from './LoginComponent';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -23,8 +22,8 @@ function Main() {
           }}
         />
         <Stack.Screen
-          name="Budget"
-          component={BudgetChoice}
+          name="Sign Up"
+          component={SignUp}
           options={{
             headerTitleStyle: {
               textAlign: "left",
@@ -32,20 +31,11 @@ function Main() {
           }}
         />
         <Stack.Screen
-          name="List Budget"
-          component={ListBudget}
+          name="Log In"
+          component={Login}
           options={{
             headerTitleStyle: {
               textAlign: "left",
-            },
-          }}
-        />
-        <Stack.Screen
-          name="50-30-20 Budget"
-          component={FTT}
-          options={{
-            headerTitleStyle: {
-              textAlign: "center",
             },
           }}
         />
