@@ -16,8 +16,10 @@ function Main() {
           name="The B-Word"
           component={Home}
           options={{
+            headerTransparent: true,
             headerTitleStyle: {
               textAlign: "center",
+              color: "#ffffff"
             },
           }}
         />
