@@ -1,5 +1,12 @@
 import React from "react";
-import { View, StyleSheet, SafeAreaView, ImageBackground } from "react-native";
+import {
+  View,
+  StyleSheet,
+  SafeAreaView,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { Text, Button, Image } from "react-native-elements";
 import blkwoman from "../assets/img/pexels-ketut-subiyanto-4353614-removebg-preview.png";
 import backImg from "../assets/img/CurveLine.png";
@@ -21,34 +28,36 @@ const Home = ({ navigation }) => {
           </Text>
         </View>
         <View style={styles.buttonContainer}>
-          <Button
-            buttonStyle={{
-              shadowColor: "rgba( 31, 38, 135, 0.37 )",
-              shadowOffset: {
-                width: 10,
-                height: 2,
-              },
-              shadowOpacity: 0.25,
-              shadowRadius: 3.84,
-              elevation: 5,
-              backgroundColor: "rgba( 95, 188, 4, 0.50 )",
-              borderRadius: 50,
-              padding: 10,
-              margin: 30,
-            }}
-            title="Sign Up"
+          <TouchableOpacity
             onPress={() => navigation.navigate("Sign Up")}
-          />
-          <Button
-            buttonStyle={{
-              backgroundColor: "rgba( 95, 188, 4, 0.50 )",
-              borderRadius: 50,
-              padding: 10,
-              margin: 30,
-            }}
-            title="Log In"
+            style={styles.button}
+          >
+            <LinearGradient
+              // Button Linear Gradient
+              colors={["#5FBC04", "#068264"]}
+              style={styles.button}
+              start={[0.1,0.5]}
+              end={[0.6,1]}
+            >
+              <Text style={styles.buttonText}>Sign Up</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+          <TouchableOpacity
             onPress={() => navigation.navigate("Log In")}
-          />
+            style={styles.button}
+          >
+            <LinearGradient
+              // Button Linear Gradient
+              colors={["#4c669f", "#3b5998", "#192f6a"]}
+              style={styles.button}
+              colors={["#5FBC04", "#068264"]}
+              style={styles.button}
+              start={[0.1,0.5]}
+              end={[0.6,1]}
+            >
+              <Text style={styles.buttonText}>Log In</Text>
+            </LinearGradient>
+          </TouchableOpacity>
         </View>
         <View>
           <Text style={styles.terms}>terms text</Text>
@@ -86,9 +95,19 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "space-evenly",
   },
+  button: {
+    padding: 15,
+    borderRadius: 50,
+  },
+  buttonText: {
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#fff",
+  },
   terms: {
     textAlign: "center",
     color: "#ffffff",
+    marginBottom: 20,
   },
   h1: {
     color: "#ffffff",

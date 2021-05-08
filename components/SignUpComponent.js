@@ -5,9 +5,11 @@ import {
   StyleSheet,
   TextInput,
   Button,
+  ImageBackground,
 } from "react-native";
 import { Text } from "react-native-elements";
 import { Formik } from "formik";
+import backImg from "../assets/img/CurveLine.png";
 
 export const SignUpForm = (props) => (
   <Formik
@@ -51,15 +53,17 @@ export const SignUpForm = (props) => (
 const SignUp = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text>Let's Get Started!</Text>
-      </View>
-      <View>
-        <SignUpForm />
-      </View>
-      <View>
+      <ImageBackground source={backImg} style={styles.image}>
+        <View style={{backgroundColor:"orange", flex:1, justifyContent:'center', margin: 15}}>
+          <Text style={{color: "#ffffff"}}>Let's Get Started!</Text>
+        </View>
+        <View style={{backgroundColor:"purple", flex:3}}>
+          <SignUpForm/>
+        </View>
+        <View style={{backgroundColor:"green", flex:1}}>
           <Text>Already have an account? Log In</Text>
-      </View>
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -67,7 +71,12 @@ const SignUp = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 20,
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    width: "100%",
+    height: "100%",
   },
 });
 

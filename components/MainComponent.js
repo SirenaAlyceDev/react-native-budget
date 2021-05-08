@@ -27,8 +27,10 @@ function Main() {
           name="Sign Up"
           component={SignUp}
           options={{
+            headerTransparent: true,
             headerTitleStyle: {
               textAlign: "left",
+              color: "#ffffff"
             },
           }}
         />
