@@ -1,8 +1,7 @@
 import React from "react";
-import { View } from "react-native";
-import Home from "./HomeComponent";
-import SignUp from "./SignUpComponent";
-import Login from './LoginComponent';
+import Home from "../screens/Home";
+import SignUp from "../screens/SignUp";
+import Login from "../screens/Login";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -17,9 +16,9 @@ function Main() {
           component={Home}
           options={{
             headerTransparent: true,
+            headerTitleAlign: "center",
             headerTitleStyle: {
-              textAlign: "center",
-              color: "#ffffff"
+              color: "#ffffff",
             },
           }}
         />
@@ -28,9 +27,9 @@ function Main() {
           component={SignUp}
           options={{
             headerTransparent: true,
+            headerTitleAlign: "center",
             headerTitleStyle: {
-              textAlign: "left",
-              color: "#ffffff"
+              color: "#ffffff",
             },
           }}
         />
@@ -38,8 +37,11 @@ function Main() {
           name="Log In"
           component={Login}
           options={{
+            headerTransparent: true,
+            headerTitleAlign: "center",
             headerTitleStyle: {
               textAlign: "left",
+              color: "#ffffff",
             },
           }}
         />

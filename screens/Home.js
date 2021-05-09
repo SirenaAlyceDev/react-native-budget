@@ -7,13 +7,13 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Text, Button, Image } from "react-native-elements";
-import blkwoman from "../assets/img/pexels-ketut-subiyanto-4353614-removebg-preview.png";
-import backImg from "../assets/img/CurveLine.png";
+import { Text, Image } from "react-native-elements";
+import blkwoman from "../assets/imgs/pexels-ketut-subiyanto-4353614-removebg-preview.png";
+import backImg from "../assets/imgs/CurveLine.png";
 
 const Home = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ImageBackground source={backImg} style={styles.image}>
         <View style={styles.imageContainer}>
           <Image source={blkwoman} style={{ width: 300, height: 400 }} />
@@ -63,7 +63,7 @@ const Home = ({ navigation }) => {
           <Text style={styles.terms}>terms text</Text>
         </View>
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   );
 };
 
