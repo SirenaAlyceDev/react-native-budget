@@ -4,7 +4,7 @@ import { Text } from "react-native-elements";
 import LoginForm from "../components/LoginForm.js";
 import backImg from "../assets/imgs/CurveLine.png";
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={backImg} style={styles.image}>
@@ -12,7 +12,7 @@ const Login = () => {
           <Text style={styles.headertext} h3>Welcome Back!</Text>
         </View>
         <View>
-          <LoginForm />
+          <LoginForm navigation={navigation} />
         </View>
         <View style={styles.footercontainer}>
           <Text style={styles.footertext}>Don't have an account? Sign Up!</Text>

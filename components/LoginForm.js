@@ -9,10 +9,10 @@ import { Text } from "react-native-elements";
 import { LinearGradient } from "expo-linear-gradient";
 import { Formik } from "formik";
 
-const LoginForm = (props) => (
+const LoginForm = ({navigation}) => (
   <Formik
     initialValues={{ email: "", password: "" }}
-    onSubmit={(values) => console.log(values)}
+    onSubmit={() => navigation.navigate("Dashboard")}
     style={styles.container}
   >
     {({ handleChange, handleBlur, handleSubmit, values }) => (
