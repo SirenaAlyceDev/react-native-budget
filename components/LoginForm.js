@@ -13,6 +13,7 @@ const LoginForm = ({navigation}) => (
   <Formik
     initialValues={{ email: "", password: "" }}
     onSubmit={() => navigation.navigate("Dashboard")}
+    // onSubmit={() => navigation.navigate("Welcome")}
     style={styles.container}
   >
     {({ handleChange, handleBlur, handleSubmit, values }) => (

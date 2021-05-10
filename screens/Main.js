@@ -2,9 +2,10 @@ import React from "react";
 import Home from "../screens/Home";
 import SignUp from "../screens/SignUp";
 import Login from "../screens/Login";
-import Dashboard from "../screens/Dashboard";
+import Welcome from "../screens/Welcome";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import Dashboard from "./Dashboard";
 
 const Stack = createStackNavigator();
 
@@ -47,6 +48,18 @@ function Main() {
           }}
         />
         <Stack.Screen
+          name="Welcome"
+          component={Welcome}
+          options={{
+            // headerTransparent: true,
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              textAlign: "left",
+              // color: "#ffffff",
+            },
+          }}
+        />
+         <Stack.Screen
           name="Dashboard"
           component={Dashboard}
           options={{
